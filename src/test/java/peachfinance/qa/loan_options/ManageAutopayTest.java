@@ -10,11 +10,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import peachfinance.qa.model.Random;
 import peachfinance.qa.model.User;
 import peachfinance.qa.questions.TheGreeting;
 import peachfinance.qa.tasks.CreateAnAccount;
-import peachfinance.qa.tasks.FromSignIn;
 import peachfinance.qa.tasks.Start;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
@@ -44,15 +42,15 @@ public class ManageAutopayTest {
     @Test
     public void should_be_able_to_add_payment_method() {
 
-        User randomUser = Random.user();
-        String welcomeFirstname = TheGreeting.expected(randomUser.getFirstname());
-
-        givenThat(bobby).wasAbleTo(
-                Start.onTheHomePage().then(FromSignIn.gotoCreateAccount()) );
-        when(bobby).attemptsTo(
-                CreateAnAccount.asSome(randomUser));
-        then(bobby).should(
-                seeThat(TheGreeting.displayed(), is(welcomeFirstname))
-        );
+//        User randomUser = Random.user();
+//        String welcomeFirstname = TheGreeting.expected(randomUser.getFirstname());
+//
+//        givenThat(bobby).wasAbleTo(
+//                Start.onTheHomePage().then(FromSignIn.gotoCreateAccount()) );
+//        when(bobby).attemptsTo(
+//                CreateAnAccount.asSome(randomUser));
+//        then(bobby).should(
+//                seeThat(TheGreeting.displayed(), is(welcomeFirstname))
+//        );
     }
 }

@@ -3,18 +3,18 @@ package peachfinance.qa.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-import peachfinance.qa.user_interface.Welcome;
+import peachfinance.qa.user_interface.LoanDetail;
 
-public class TheGreeting implements Question<String> {
+public class TheActivity implements Question<String> {
 
-    public static Question<String> displayed() {
-        return Text.of(Welcome.GREETING)
-                .describedAs("the greeting")
+    public static Question<String> displayedLoanID() {
+        return Text.of(LoanDetail.LOAN_ID)
+                .describedAs("the displayed loan id")
                 .asAString();
     }
 
     public static String expected(String name) {
-        return String.format("WelcoXXXme, %s.", name);
+        return String.format("Welcome, %s.", name);
     }
 
     @Override
